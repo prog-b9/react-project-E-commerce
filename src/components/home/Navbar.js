@@ -35,23 +35,23 @@ export const Navbar = () => {
               />
             </form>
             <div className="navbar-nav me-auto mb-2 d-flex align-items-start  mb-md-0">
-              <li className="nav-item d-flex align-items-center">
+              <li className="nav-item d-flex mx-2 my-2 mx-md-1 my-md-0 align-items-center">
                 <img
                   src="../../images/login.png"
                   alt=""
                   style={{ width: "25px", height: "25px" }}
                 />
-                <Link to={"/login"} className="nav-link active text-white me-2" href="#">
+                <Link to={"/login"} style={{textDecoration:"none"}} className=" active text-white me-2" href="#">
                   دخول
                 </Link>
               </li>
-              <li className="nav-item d-flex align-items-center">
+              <li className="nav-item mx-2 my-2 mx-md-1 my-md-0 d-flex align-items-center">
                 <img
                   src="../../images/cart.png"
                   alt=""
                   style={{ width: "25px", height: "25px" }}
                 />
-                <Link to={"/cart"} className="nav-link active text-white me-2" href="#">
+                <Link to={"/cart"} style={{textDecoration:"none"}} className=" active text-white me-2" href="#">
                   العربة
                 </Link>
               </li>

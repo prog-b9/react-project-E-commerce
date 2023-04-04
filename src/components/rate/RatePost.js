@@ -30,6 +30,7 @@ export const RatePost = () => {
           className="bg-body-tertiary p-3 pb-4 rounded-3 border-0 w-100 rate-post-textarea"
           placeholder="أكتب تعليقك ...."
           rows={3}
+          style={{outline:"none"}}
         ></textarea>
         <div className="d-flex justify-content-end">
           <button className="btn btn-dark my-2 px-3 py-2">إضافة التعليق</button>

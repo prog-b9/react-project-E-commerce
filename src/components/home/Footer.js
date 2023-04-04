@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div className="mt-5" style={{ backgroundColor: "#F9F9F9" }} >
+    <div className="" style={{ backgroundColor: "#fff" }} >
       <div className="container">
         <div className=" footer-container py-3" style={{ color: "#565656" }}>
           <div>

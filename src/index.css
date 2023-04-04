@@ -1,13 +1,20 @@
 * {
     font-family: 'Cairo', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
 }
+
+
 
 :root {
     --shadow-color: rgba(39, 51, 79, 0.05);
+    --shadow-color-dark: rgba(39, 51, 79, 0.2);
 }
 
 body::-webkit-scrollbar {
-    background-color: #f9f9f9;
+    background-color: #F7F8FA;
     width: 10px;
 }
 
@@ -17,8 +24,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* start the material ui relaion */
-#style-shadow {
+#style-shadow,
+.style-shadow {
     box-shadow: 0 0 10px 0 var(--shadow-color);
+}
+
+#style-shadow-dark,
+.style-shadow-dark {
+    box-shadow: 0 0 10px 0 var(--shadow-color-dark);
 }
 
 /* End the material ui relaion */
@@ -134,10 +147,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #ececec;
 }
 
-/* .rate-post-textarea:focus {
-    border-width: 30px !important;
-} */
-
 .rate-post-textarea::-webkit-scrollbar {
     background-color: #ececec;
     width: 10px;
@@ -149,14 +158,54 @@ body::-webkit-scrollbar-thumb {
     border-radius: 50px;
 }
 
+#icon-trash-can {
+    font-size: 20px;
+}
+
 @media (max-width:260px) {
     #rate-container-flex {
         flex-direction: column;
     }
+
+    #width-cart-pay {
+        width: 100%;
+    }
+}
+
+/* End Products */
+
+/* Start Admin */
+
+#admin-btn-sidebar a {
+    color: #212529;
+}
+
+#admin-btn-sidebar {
+    background-color: #fff;
+}
+
+#admin-btn-sidebar:hover {
+    background-color: #212529;
+    color: #fff;
+}
+
+#admin-btn-sidebar:hover a {
+    color: #fff;
+}
+
+.input-file {
+    background-color: #212529;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+
 }
 
 
-/* End Products */
+/* End Admin */
 
 
 
@@ -167,6 +216,11 @@ body::-webkit-scrollbar-thumb {
         max-width: 150px;
         height: 100px;
         transition: 0.3s;
+    }
+
+    #admin-sidebar-container {
+        display: flex;
+        justify-content: space-between;
     }
 }
 

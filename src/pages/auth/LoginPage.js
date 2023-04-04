@@ -40,6 +40,10 @@ export const LoginPage = () => {
           </Link>
         </div>
       </form>
+
+      <Link to={"/admin/allProducts"}>
+        <h1>Admin Auth</h1>
+      </Link>
     </div>
   );
 };

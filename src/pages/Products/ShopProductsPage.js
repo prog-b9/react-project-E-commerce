@@ -8,7 +8,7 @@ import { RangePriceFilters } from "../../components/Uitily/RangePriceFilters";
 
 export const ShopProductsPage = () => {
   return (
-    <div className="" style={{ minHeight: "80vh" }}>
+    <div className="" >
       <CategoryProductsHeader />
       <SearchSortResult />
       <div className="container mt-5">
