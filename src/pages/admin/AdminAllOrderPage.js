@@ -5,7 +5,7 @@ import { Pagination } from "../../components/Uitily/Pagination";
 
 export const AdminAllOrderPage = () => {
   return (
-    <div className="" style={{ minHeight: "90vh" }}>
+    <div className="bg-light" style={{ minHeight: "90vh" }}>
       <div className="row m-0">
         {/* Side bar */}
         <div className="col-12 col-md-4 col-lg-3 col-xl-2">

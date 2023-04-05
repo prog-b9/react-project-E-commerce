@@ -1,9 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 // import blob from "./images/blob-category-01.png";
-export const CategoryCard = ({ categoryImg, categoryTitle,categoryImgColor }) => {
+export const CategoryCard = ({
+  categoryImg,
+  categoryTitle,
+  categoryImgColor,
+}) => {
   return (
-    <div className=" my-2 d-flex flex-column align-items-center ">
+    <div className=" my-2 d-flex flex-column align-items-center">
       <div className="position-relative ">
         <svg
           xmlns="http://www.w3.org/2000/svg"

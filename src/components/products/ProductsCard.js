@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 export const ProductsCard = () => {
   return (
     <div className="my-2">
-      <Link to={"/productsDetails/:id"} className="card btn border-0" id="style-shadow">
+      <Link
+        to={"/productsDetails/:id"}
+        className="card bg-white btn border-0"
+        id="style-shadow"
+      >
         <img
           src={"../../images/item.png"}
           id="img-products-card"
@@ -22,10 +26,13 @@ export const ProductsCard = () => {
               />
             </div>
           </div>
-          <p className="" id="title-product-card">اسود كربون ساعة يد ذكية بيب اس اسود كبرون</p>
-          <div className=" d-flex justify-content-between" id="price-with-star-product-card">
-
-
+          <p className="text-center" id="title-product-card">
+            اسود كربون ساعة يد ذكية بيب اس اسود كبرون
+          </p>
+          <div
+            className=" d-flex justify-content-between"
+            id="price-with-star-product-card"
+          >
             <div className="d-flex align-items-center justify-content-center">
               <div className="mx-2">4.5</div>
               <img

@@ -4,7 +4,7 @@ export const AdminOrderDetailsCard = () => {
   return (
     <div className="col-12 col-lg-6">
       {" "}
-      <div className="bg-light px-3 py-2 my-2 rounded-4" id="style-shadow-dark">
+      <div className="bg-white px-3 py-2 my-2 rounded-4" id="style-shadow-dark">
         <div className="row">
           <div className="col-12 col-md-3 d-flex align-items-center justify-content-center">
             <img

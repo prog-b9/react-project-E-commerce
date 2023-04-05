@@ -3,14 +3,16 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
 }
 
-
+body {
+    /* this is set becouse some element fill out the page => scroll-x */
+    overflow-x: hidden;
+}
 
 :root {
     --shadow-color: rgba(39, 51, 79, 0.05);
-    --shadow-color-dark: rgba(39, 51, 79, 0.2);
+    --shadow-color-dark: rgba(39, 51, 79, 0.1);
 }
 
 body::-webkit-scrollbar {
@@ -111,6 +113,16 @@ body::-webkit-scrollbar-thumb {
 /* End Search sort Result with side-filter */
 
 
+/* Start Slider Img */
+
+.slider-img {
+    max-width: 100%;
+    height: 400px;
+    transition: 0.2s;
+}
+
+/* End Slider Img */
+
 /* Start Products */
 #img-products-card {
     max-width: 250px;
@@ -170,6 +182,11 @@ body::-webkit-scrollbar-thumb {
     #width-cart-pay {
         width: 100%;
     }
+
+    .slider-img {
+        height: 100px;
+    }
+   
 }
 
 /* End Products */
@@ -256,6 +273,9 @@ body::-webkit-scrollbar-thumb {
 
     #price-with-star-product-card {
         font-size: 13px;
+    }
+    .slider-img {
+        height: 200px;
     }
 
 }

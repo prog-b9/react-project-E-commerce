@@ -10,7 +10,7 @@ export const AdminOrderDetails = () => {
       {/* User person Details */}
       <div className="container my-5">
         <div
-          className="col-12 col-md-12 col-lg-10 col-xl-8 m-auto bg-light p-3 rounded-3"
+          className="col-12 col-md-12 col-lg-10 col-xl-8 m-auto bg-white p-3 rounded-3"
           id="style-shadow-dark"
         >
           <h3 className="fw-bold">تفاصيل العميل</h3>
@@ -43,7 +43,7 @@ export const AdminOrderDetails = () => {
             <span className="mx-2 text-muted fw-bold fs-5">12040 جنية</span>
           </div>
           {/* Order Status */}
-          <div className="col-6 m-auto my-4">
+          <div className="col-12 col-sm-8 col-md-10 col-lg-6 m-auto my-4">
             <div className="input-group mb-3" id="style-shadow">
               <select
                 className="form-select rounded-0 rounded-end text-center shadow-none border-0"

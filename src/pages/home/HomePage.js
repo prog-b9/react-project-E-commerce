@@ -7,7 +7,7 @@ import { BrandHome } from "../../components/home/BrandHome";
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="bg-light pb-4">
       <Slider />
       <CategoryHome
         title={"التصنيفات"}

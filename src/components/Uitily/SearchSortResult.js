@@ -42,7 +42,7 @@ export const SearchSortResult = () => {
         >
           <Button variant="none" className="border-0">
             <div
-              className="d-flex align-items-center justify-content-between  p-2 rounded bg-light"
+              className="d-flex align-items-center justify-content-between  p-2 rounded bg-white"
               id="style-shadow"
               style={{ width: "170px" }}
             >

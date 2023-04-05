@@ -1,25 +1,9 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 
-export const AdminAllProductsCard = () => {
+export const UserAllFavoriteCard = () => {
   return (
-    <div className="col-6 col-lg-4 col-xl-4 col-xxl-3 my-2">
+    <div className=" col-6 col-lg-4 col-xl-4 col-xxl-3 my-2">
       <div className="card bg-white p-2 border-0" id="style-shadow-dark">
-        <div className="d-flex justify-content-between">
-          {/* <div>
-            <ion-icon name="create"></ion-icon>
-            </div> */}
-          <div className="d-flex align-items-center bg-warning rounded-circle p-2">
-            <button className="btn border-0 text-dark p-0 m-0 d-flex align-items-center">
-              <ion-icon name="create" id="icon-trash-can"></ion-icon>
-            </button>
-          </div>
-          <div className="d-flex align-items-center bg-danger rounded-circle p-2">
-            <button className="btn border-0 text-white p-0 m-0 d-flex align-items-center">
-              <ion-icon name="trash" id="icon-trash-can"></ion-icon>
-            </button>
-          </div>
-        </div>
         <img
           src={"../../images/item.png"}
           id="img-products-card"
@@ -27,7 +11,17 @@ export const AdminAllProductsCard = () => {
           alt="products"
         />
         <div className="card-body p-0">
-          <p className="" id="title-product-card">
+          <div className="d-flex justify-content-between">
+            <div></div>
+            <div className="card-title">
+              <img
+                src="../../images/fav-off.png"
+                style={{ maxWidth: "30px", height: "30px" }}
+                alt="fav-off"
+              />
+            </div>
+          </div>
+          <p className="text-center" id="title-product-card ">
             اسود كربون ساعة يد ذكية بيب اس اسود كبرون
           </p>
           <div

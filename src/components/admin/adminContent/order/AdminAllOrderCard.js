@@ -7,7 +7,7 @@ export const AdminAllOrderCard = () => {
       {" "}
       <Link style={{ textDecoration: "none" }} to={"/admin/orderDetails/:id"}>
         <div
-          className="bg-light px-3 py-2 my-2 rounded-4"
+          className="bg-white px-3 py-2 my-2 rounded-3"
           id="style-shadow-dark"
         >
           <div className="row">
