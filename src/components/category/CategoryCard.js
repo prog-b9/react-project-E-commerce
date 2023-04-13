@@ -26,7 +26,7 @@ export const CategoryCard = ({
           </defs>
           <g clipPath="url(#a)">
             <path
-              fill={categoryImgColor}
+              fill={categoryImgColor || "#BFBFBF"}
               d="M787 612q-63 112-175 226t-223-1Q278 722 246 611t-40-262q-8-151 143-216t243.5 58.5q92.5 123.5 175 216T787 612Z"
             />
           </g>

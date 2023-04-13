@@ -52,7 +52,7 @@ export const AdminSideBar = () => {
         >
           <Link
             to={`/admin/${item.onPress}`}
-            className=""
+            className="d-block"
             style={{ textDecoration: "none" }}
           >
             {item.title}

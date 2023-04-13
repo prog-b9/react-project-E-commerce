@@ -1,7 +1,12 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 
-export const Pagination = () => {
+export const Pagination = ({ countPage , onPress }) => {
+  const handelPage = (nowPage) => {
+    onPress(nowPage.selected + 1);
+    // console.log(nowPage.selected + 1);
+  };
+
   return (
     <div className=" container p-2">
       <div
@@ -10,7 +15,9 @@ export const Pagination = () => {
         dir="ltr"
       >
         <ReactPaginate
-          pageCount={100}
+          // عدد الصفحات
+          pageCount={countPage}
+          onPageChange={handelPage}
           breakLabel="...."
           nextLabel="التالي"
           previousLabel="الرجوع"

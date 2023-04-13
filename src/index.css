@@ -48,6 +48,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* End Category */
+/* Start UseNotification */
+.style-use-notification {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* End UseNotification */
 
 /* Start discount-section */
 #discount-section-container {
@@ -186,7 +193,7 @@ body::-webkit-scrollbar-thumb {
     .slider-img {
         height: 100px;
     }
-   
+
 }
 
 /* End Products */
@@ -274,6 +281,7 @@ body::-webkit-scrollbar-thumb {
     #price-with-star-product-card {
         font-size: 13px;
     }
+
     .slider-img {
         height: 200px;
     }

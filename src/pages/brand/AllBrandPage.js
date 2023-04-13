@@ -1,28 +1,61 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { BrandCard } from "../../components/brand/BrandCard";
-import { SubTitle } from "../../components/Uitily/SubTitle";
 import { Pagination } from "../../components/Uitily/Pagination";
+import AllBrandPageLogic from "../../logic/brand/AllBrandPageLogic";
 
-export const AllBrandPage = ({ title, btnTitle, pathUrl }) => {
+export const AllBrandPage = () => {
+  const [
+    myDataBrand,
+    myDataBrandPagination,
+    loading,
+    getNowPage,
+    alearSectionFinsh,
+  ] = AllBrandPageLogic();
+
   return (
-    <div className="container" style={{ minHeight: "75vh" }}>
-      <SubTitle title={title} btnTitle={btnTitle} pathUrl={pathUrl} />
-      <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
-        <BrandCard BrandImg={"../../images/brand1.png"} />
-        <BrandCard BrandImg={"../../images/brand3.png"} />
-        <BrandCard BrandImg={"../../images/brand2.png"} />
-        <BrandCard BrandImg={"../../images/brand1.png"} />
-        <BrandCard BrandImg={"../../images/brand2.png"} />
-        <BrandCard BrandImg={"../../images/brand3.png"} />
-        <BrandCard BrandImg={"../../images/brand1.png"} />
-        <BrandCard BrandImg={"../../images/brand2.png"} />
-        <BrandCard BrandImg={"../../images/brand3.png"} />
-        <BrandCard BrandImg={"../../images/brand3.png"} />
-        <BrandCard BrandImg={"../../images/brand2.png"} />
-        <BrandCard BrandImg={"../../images/brand1.png"} />
-      </div>
-      <div className="mt-5">
-        <Pagination />
+    <div className="bg-light">
+      <div className="container" style={{ minHeight: "90vh" }}>
+        <h3 className="py-4 fw-bold">جميع الماركات</h3>
+        <div className="row">
+          {loading
+            ? Array(6)
+                .fill(0)
+                .map((_, i) => (
+                  <div className="col-6 col-md-4 col-lg-2  m-auto mt-3" key={i}>
+                    <div
+                      className=" border-0 card rounded-4"
+                      id="style-shadow-dark"
+                      style={{ height: "150px" }}
+                      aria-hidden="true"
+                    >
+                      <div className="card-body card-text text-center placeholder-glow d-flex align-items-center flex-column justify-content-center">
+                        <span
+                          className="placeholder rounded-circle col-12"
+                          style={{ width: "70px", height: "70px" }}
+                        ></span>
+                        <span className="placeholder rounded mt-3 col-10"></span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            : myDataBrand && myDataBrand.length > 0
+            ? myDataBrand.map((item, i) => (
+                <div className="col-6 col-md-4 col-lg-2 m-auto mt-3" key={i}>
+                  <BrandCard BrandImg={item.image} />
+                </div>
+              ))
+            : loading || alearSectionFinsh("لاتوجد ماركات")}
+        </div>
+        <div className="mt-5">
+          <Pagination
+            countPage={
+              myDataBrandPagination.paginationResult &&
+              myDataBrandPagination.paginationResult.numberOfPages
+            }
+            onPress={getNowPage}
+          />
+        </div>
       </div>
     </div>
   );

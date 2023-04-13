@@ -46,7 +46,9 @@ export const ProductsDetailsPage = () => {
       </div>
       {/* products do you like Section*/}
       <SubTitle title={"منتجات قد تعجبك"} />
-      <ProductsHomeContainer />
+      <div className="container">
+        <ProductsHomeContainer />
+      </div>
     </div>
   );
 };
