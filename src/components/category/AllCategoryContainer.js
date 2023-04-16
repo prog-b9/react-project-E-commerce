@@ -7,13 +7,49 @@ import Roll from "react-reveal/Roll";
 const AllCategoryContainer = ({
   myDataCategory,
   loading,
-  colorBackgroundCategory,
   alearSectionFinsh,
 }) => {
+
+
+  const colorBackgroundCategory = [
+    "#ABDEEC",
+    "#E3C3B7",
+    "#B1B3FB",
+    "#F8B784",
+    "#ABDEEC",
+    "#BFBFBF",
+    "#84E4C0",
+    "#B1B3FB",
+  ];
   return (
     <div className="row  justify-content-center">
-      {loading
-        ? Array(5)
+      {loading === false
+        ? myDataCategory
+          ? Object.values(myDataCategory).length === 0
+            ? alearSectionFinsh("لاتوجد تصنيفات")
+            : Object.values(myDataCategory).map((item, i) => (
+                <div className="col-6 col-sm-4 col-md-3 col-lg-2" key={i}>
+                  {i < 3 ? (
+                    <Roll right>
+                      <CategoryCard
+                        categoryImg={item.image}
+                        categoryTitle={item.name}
+                        categoryImgColor={colorBackgroundCategory[i]}
+                      />
+                    </Roll>
+                  ) : (
+                    <Roll left>
+                      <CategoryCard
+                        categoryImg={item.image}
+                        categoryTitle={item.name}
+                        categoryImgColor={colorBackgroundCategory[i]}
+                      />
+                    </Roll>
+                  )}
+                </div>
+              ))
+          : null
+        : Array(5)
             .fill(0)
             .map((_, i) => (
               <div
@@ -28,39 +64,9 @@ const AllCategoryContainer = ({
                     style={{ width: "70px", height: "70px" }}
                   ></span>
                   <span className="placeholder rounded mt-3 col-10"></span>
-                  {/* <span className="placeholder rounded mt-3 col-8"></span> */}
                 </div>
               </div>
-            ))
-        : myDataCategory && myDataCategory.length > 0
-        ? myDataCategory.map((item, i) => (
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2" key={i}>
-              {i < 3 ? (
-                <Roll right>
-                  <CategoryCard
-                    categoryImg={item.image}
-                    categoryTitle={item.name}
-                    categoryImgColor={colorBackgroundCategory[i]}
-                  />
-                </Roll>
-              ) : (
-                <Roll left>
-                  <CategoryCard
-                    categoryImg={item.image}
-                    categoryTitle={item.name}
-                    categoryImgColor={
-                      colorBackgroundCategory[
-                        Math.floor(
-                          Math.random() * colorBackgroundCategory.length
-                        ) + 1
-                      ]
-                    }
-                  />
-                </Roll>
-              )}
-            </div>
-          ))
-        : loading || alearSectionFinsh("لاتوجد تصنيفات")}
+            ))}
     </div>
   );
 };

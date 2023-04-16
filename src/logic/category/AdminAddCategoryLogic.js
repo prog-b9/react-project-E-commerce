@@ -9,7 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { UseNotification } from "../UseNotification";
 const AdminAddCategoryLogic = () => {
   let avatar = "../../images/avatar.png";
+  // this is var add to display to pages
   const [selectedImgCategory, setSelectedImgCategory] = useState(avatar);
+  // this is var add to database
   const [selectedImg, setSelectedImg] = useState(null);
   const [nameCategory, setNameCategory] = useState("");
   const [isLoading, setIsLoading] = useState(true);

@@ -17,14 +17,11 @@ const AllCategoryPageLogic = () => {
   const myDataCategory = useSelector(
     (state) => state.rootCategory.category.data
   );
-  const alearSectionFinsh = useSelector((state) => state.rootCategory.alearSectionFinsh);
-
+  const alearSectionFinsh = useSelector(
+    (state) => state.rootCategory.alearSectionFinsh
+  );
 
   const loading = useSelector((state) => state.rootCategory.loading);
-
-  const colorBackgroundCategory = useSelector(
-    (state) => state.rootCategory.colorBackgroundCategory
-  );
 
   const getNowPage = (nowPage) => {
     myDispatch(getAllCategoryPage(nowPage));
@@ -33,9 +30,8 @@ const AllCategoryPageLogic = () => {
     myDataCategory,
     myDataPagination,
     loading,
-    colorBackgroundCategory,
     getNowPage,
-    alearSectionFinsh
+    alearSectionFinsh,
   ];
 };
 

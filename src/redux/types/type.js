@@ -1,6 +1,6 @@
+export const GET_ERROR = "GET_ERROR";
 ////////////// Start Category /////////////////
 export const GET_ALL_CATEGORY = "GET_ALL_CATEGORY";
-export const GET_ERROR = "GET_ERROR";
 export const CREATE_CATEGORY = "CREATE_CATEGORY";
 export const GET_NOW_PAGE_CATEGORY = "4";
 
@@ -18,8 +18,14 @@ export const colorBackgroundCategory = [
 
 ////////////// End Category /////////////////
 
+////////////// Start SubCategory /////////////////
+export const CREATE_SUB_CATEGORY = "CREATE_SUB_CATEGORY";
+////////////// End SubCategory /////////////////
+
+
 ////////////// Start Brand /////////////////
 export const GET_ALL_BRAND = "GET_ALL_BRAND";
+export const CREATE_BRAND = "CREATE_BRAND";
 export const GET_NOW_PAGE_BRAND = "3";
 
 ////////////// End Brand /////////////////

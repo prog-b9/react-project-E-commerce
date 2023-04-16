@@ -9,12 +9,25 @@ import BrandHomeLogic from "../../logic/brand/BrandHomeLogic";
 export const BrandHome = ({ title, btnTitle }) => {
   const [myDataBrand, loading, alearSectionFinsh] = BrandHomeLogic();
 
+
+
   return (
     <div className="container my-5">
       <SubTitle title={title} btnTitle={btnTitle} pathUrl={"AllBrand"} />
       <div className="row  overflow-hidden">
-        {loading
-          ? Array(6)
+        {loading === false
+          ? myDataBrand
+            ? Object.values(myDataBrand).length === 0
+              ? alearSectionFinsh("لاتوجد ماركات")
+              : Object.values(myDataBrand).map((item, i) => (
+                  <div className="col-6 col-md-4 col-lg-2 m-auto mt-3" key={i}>
+                    <Rotate top>
+                      <BrandCard BrandImg={item.image} />
+                    </Rotate>
+                  </div>
+                ))
+            : null
+          : Array(6)
               .fill(0)
               .map((_, i) => (
                 <div className="col-6 col-md-4 col-lg-2  m-auto mt-3" key={i}>
@@ -32,16 +45,7 @@ export const BrandHome = ({ title, btnTitle }) => {
                     </div>
                   </div>
                 </div>
-              ))
-          : myDataBrand && myDataBrand.length > 0
-          ? myDataBrand.map((item, i) => (
-              <div className="col-6 col-md-4 col-lg-2 m-auto mt-3" key={i}>
-                <Rotate top>
-                  <BrandCard BrandImg={item.image} />
-                </Rotate>
-              </div>
-            ))
-          :loading || alearSectionFinsh("لاتوجد ماركات")}
+              ))}
       </div>
     </div>
   );

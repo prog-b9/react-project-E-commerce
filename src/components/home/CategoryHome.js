@@ -6,26 +6,50 @@ import Roll from "react-reveal/Roll";
 import CategoryHomeLogic from "../../logic/category/CategoryHomeLogic";
 
 export const CategoryHome = ({ title, btnTitle, pathUrl }) => {
-  const [myData, loading, colorBackgroundCategory] = CategoryHomeLogic();
+  const [myData, loading, alearSectionFinsh] = CategoryHomeLogic();
 
-  // if (myData) {
-  console.log(loading);
-  console.log(myData);
-  // }
+  const colorBackgroundCategory = [
+    "#ABDEEC",
+    "#E3C3B7",
+    "#B1B3FB",
+    "#F8B784",
+    "#ABDEEC",
+    "#BFBFBF",
+    "#84E4C0",
+    "#B1B3FB",
+  ];
 
   return (
     <div className="container ">
       <SubTitle title={title} btnTitle={btnTitle} pathUrl={pathUrl} />
       <div className="row  justify-content-center overflow-hidden">
-        {/* {loading ? <h1>loading</h1> : <h1>all data</h1>} */}
-
-        {myData &&
-          myData.map((item, i) =>
-            loading === false ? <h1 key={i}>loading</h1> : <h1 key={i}>all data</h1>
-          )}
-
-        {/* {loading
-          ? Array(5)
+        {loading === false
+          ? myData
+            ? Object.values(myData).length === 0
+              ? alearSectionFinsh("لاتوجد تصنيفات")
+              : Object.values(myData).map((item, i) => (
+                  <div className="col-6 col-sm-4 col-md-3 col-lg-2" key={i}>
+                    {i < 3 ? (
+                      <Roll right>
+                        <CategoryCard
+                          categoryImg={item.image}
+                          categoryTitle={item.name}
+                          categoryImgColor={colorBackgroundCategory[i]}
+                        />
+                      </Roll>
+                    ) : (
+                      <Roll left>
+                        <CategoryCard
+                          categoryImg={item.image}
+                          categoryTitle={item.name}
+                          categoryImgColor={colorBackgroundCategory[i]}
+                        />
+                      </Roll>
+                    )}
+                  </div>
+                ))
+            : null
+          : Array(5)
               .fill(0)
               .map((_, i) => (
                 <div
@@ -42,46 +66,7 @@ export const CategoryHome = ({ title, btnTitle, pathUrl }) => {
                     <span className="placeholder rounded mt-3 col-10"></span>
                   </div>
                 </div>
-              ))
-          : null} */}
-
-        {/* Start categort */}
-        {/* {myData
-          ? myData.map((item, i) => (
-              <div className="col-6 col-sm-4 col-md-3 col-lg-2" key={i}>
-                {i < 3 ? (
-                  <Roll right>
-                    <CategoryCard
-                      categoryImg={item.image}
-                      categoryTitle={item.name}
-                      categoryImgColor={
-                        colorBackgroundCategory[
-                          Math.floor(
-                            Math.random() * colorBackgroundCategory.length
-                          ) + 1
-                        ]
-                      }
-                    />
-                  </Roll>
-                ) : (
-                  <Roll left>
-                    <CategoryCard
-                      categoryImg={item.image}
-                      categoryTitle={item.name}
-                      categoryImgColor={
-                        colorBackgroundCategory[
-                          Math.floor(
-                            Math.random() * colorBackgroundCategory.length
-                          ) + 1
-                        ]
-                      }
-                    />
-                  </Roll>
-                )}
-              </div>
-            ))
-          : null} */}
-        {/* alearSectionFinsh("لاتوجد تصنيفات") */}
+              ))}
         {/* End categort */}
       </div>
     </div>

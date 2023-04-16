@@ -9,7 +9,6 @@ export const AllCategoryPage = () => {
     myDataCategory,
     myDataPagination,
     loading,
-    colorBackgroundCategory,
     getNowPage,
     alearSectionFinsh,
   ] = AllCategoryPageLogic();
@@ -21,7 +20,6 @@ export const AllCategoryPage = () => {
         <AllCategoryContainer
           myDataCategory={myDataCategory}
           loading={loading}
-          colorBackgroundCategory={colorBackgroundCategory}
           alearSectionFinsh={alearSectionFinsh}
         />
         <div className="mt-5">

@@ -3,6 +3,7 @@ import React from "react";
 import { BrandCard } from "../../components/brand/BrandCard";
 import { Pagination } from "../../components/Uitily/Pagination";
 import AllBrandPageLogic from "../../logic/brand/AllBrandPageLogic";
+import { Rotate } from "react-reveal";
 
 export const AllBrandPage = () => {
   const [
@@ -18,14 +19,27 @@ export const AllBrandPage = () => {
       <div className="container" style={{ minHeight: "90vh" }}>
         <h3 className="py-4 fw-bold">جميع الماركات</h3>
         <div className="row">
-          {loading
-            ? Array(6)
+          {loading === false
+            ? myDataBrand
+              ? Object.values(myDataBrand).length === 0
+                ? alearSectionFinsh("لاتوجد ماركات")
+                : Object.values(myDataBrand).map((item, i) => (
+                    <div
+                      className="col-6 col-md-4 col-lg-2 m-auto mt-3"
+                      key={i}
+                    >
+                      <Rotate top>
+                        <BrandCard BrandImg={item.image} />
+                      </Rotate>
+                    </div>
+                  ))
+              : null
+            : Array(6)
                 .fill(0)
                 .map((_, i) => (
                   <div className="col-6 col-md-4 col-lg-2  m-auto mt-3" key={i}>
                     <div
                       className=" border-0 card rounded-4"
-                      id="style-shadow-dark"
                       style={{ height: "150px" }}
                       aria-hidden="true"
                     >
@@ -38,14 +52,7 @@ export const AllBrandPage = () => {
                       </div>
                     </div>
                   </div>
-                ))
-            : myDataBrand && myDataBrand.length > 0
-            ? myDataBrand.map((item, i) => (
-                <div className="col-6 col-md-4 col-lg-2 m-auto mt-3" key={i}>
-                  <BrandCard BrandImg={item.image} />
-                </div>
-              ))
-            : loading || alearSectionFinsh("لاتوجد ماركات")}
+                ))}
         </div>
         <div className="mt-5">
           <Pagination
