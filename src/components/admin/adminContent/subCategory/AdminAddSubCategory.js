@@ -2,8 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { ToastContainer } from "react-toastify";
-import AdminAddSubCategoryLogic from "../../../../logic/category/AdminAddSubCategoryLogic";
-// import Select from 'react-select'
+import AdminAddSubCategoryLogic from "../../../../logic/subCategory/AdminAddSubCategoryLogic";
 
 export const AdminAddSubCategory = () => {
   const [
@@ -51,22 +50,9 @@ export const AdminAddSubCategory = () => {
                   </option>
                 ))
               : null}
-            {/* <option value="1">التصنيف الاول</option>
-            <option value="3">التصنيف الثالث</option> */}
           </select>
         </div>
-        {/* <Select
-        className="basic-single my-3"
-        classNamePrefix="select"
-        // defaultValue={colourOptions[0]}
-        // isDisabled={isDisabled}
-        // isLoading={isLoading}
-        // isClearable={isClearable}
-        // isRtl={isRtl}
-        // isSearchable={isSearchable}
-        name="color"
-        options={null}
-      /> */}
+
         <div className="d-flex justify-content-end">
           <button
             onClick={submitAddSubCategory}

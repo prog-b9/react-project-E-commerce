@@ -29,6 +29,12 @@ const AdminAddCategoryLogic = () => {
   const addCategorySubmit = async (e) => {
     // stop relading the page
     e.preventDefault();
+    // this is condation if internet connection is Error must be display notification to users
+    if (!navigator.onLine) {
+      UseNotification("هناك مشكلة في الاتصال بالانترنت", "warn");
+      return;
+    }
+
     if (selectedImg === null || nameCategory === "") {
       UseNotification("جميع الحقول مطلوبة", "warn");
       return;
@@ -57,7 +63,6 @@ const AdminAddCategoryLogic = () => {
     e.preventDefault();
     setNameCategory(e.target.value);
   };
-
   useEffect(() => {
     if (isLoading === false) {
       // if insert data to DB clear this variable
@@ -66,6 +71,10 @@ const AdminAddCategoryLogic = () => {
       setSelectedImg("");
       if (response.status === 201) {
         UseNotification("تم إضافة التصنيف", "success");
+      } else if (
+        response === "MyError : AxiosError: Request failed with status code 400"
+      ) {
+        UseNotification("التصنيف الاساسي مسجل مسبقاً", "warn");
       } else {
         UseNotification("هناك مشكلة حدثت", "error");
       }

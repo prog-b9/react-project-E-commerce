@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategory } from "../../redux/actions/ActionCategory";
 import { useState } from "react";
-import { UseNotification } from "../../logic/UseNotification";
+import { UseNotification } from "../UseNotification";
 import { createSubCategory } from "../../redux/actions/ActionSubCategory";
 
 const AdminAddSubCategoryLogic = () => {
@@ -43,6 +43,12 @@ const AdminAddSubCategoryLogic = () => {
   const submitAddSubCategory = async (e) => {
     e.preventDefault();
 
+    // this is condation if internet connection is Error must be display notification to users
+    if (!navigator.onLine) {
+      UseNotification("هناك مشكلة في الاتصال بالانترنت", "warn");
+      return;
+    }
+
     if (nameSelectedSubCategory === "") {
       UseNotification("أدخل اسم تصنيف الفرعي", "warn");
       return;
@@ -55,6 +61,7 @@ const AdminAddSubCategoryLogic = () => {
       }
     }
 
+    // this is condeation ("0") zero is normal selcet with option
     if (IdSelectedCategory === "0") {
       UseNotification("يجب اختيار التصنيف الاساسي", "warn");
       return;
@@ -81,7 +88,6 @@ const AdminAddSubCategoryLogic = () => {
     // console.log(nameSelectedSubCategory);
     console.log("AddSubCategory");
   };
-  console.log(response);
 
   useEffect(() => {
     if (isLoading === false) {
@@ -109,7 +115,7 @@ const AdminAddSubCategoryLogic = () => {
     IdSelectedCategory,
     msgInputSelect,
     myDataCategory,
-    submitAddSubCategory
+    submitAddSubCategory,
   ];
 };
 

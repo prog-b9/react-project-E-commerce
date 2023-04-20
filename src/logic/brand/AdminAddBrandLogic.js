@@ -26,9 +26,19 @@ const AdminAddBrandLogic = () => {
 
   const submitAddBrand = async (e) => {
     e.preventDefault();
+    // this is condation if internet connection is Error must be display notification to users
+    if (!navigator.onLine) {
+      UseNotification("هناك مشكلة في الاتصال بالانترنت", "warn");
+      return;
+    }
 
     if (nameBrand === "" || selectedImg === null) {
       UseNotification("جميع الحقول مطلوبة", "warn");
+      return;
+    }
+    let nameBrandSplit = nameBrand.split("");
+    if (nameBrandSplit.length < 3) {
+      UseNotification("يجب ان يكون اسم الماركة اكثر من 2 أحرف", "warn");
       return;
     }
 
@@ -40,13 +50,10 @@ const AdminAddBrandLogic = () => {
     setIsLoading(true);
     await myDispatch(createBrand(formData));
     setIsLoading(false);
-
-    console.log("add brand");
   };
   const changeNameBrand = (e) => {
     setNameBrand(e.target.value);
   };
-  console.log(response)
   useEffect(() => {
     if (isLoading === false) {
       setNameBrand("");
@@ -54,6 +61,11 @@ const AdminAddBrandLogic = () => {
       setSelectedImg(null);
       if (response.status === 201) {
         UseNotification("تم إضافة الماركة", "success");
+      } else if (
+        response ===
+        "My Error : AxiosError: Request failed with status code 400"
+      ) {
+        UseNotification("الماركة مسجلة مسبقاً", "warn");
       } else {
         UseNotification("هناك مشكلة حدثت", "error");
       }

@@ -45,7 +45,7 @@ export const AdminAddBrand = () => {
         <div className="my-5">
           <div className="form-floating">
             <input
-              className="bg-body-tertiary p-2 px-3 rounded-3 border-0 w-100 rate-post-textarea"
+              className="bg-white style-shadow p-2 px-3 rounded-3 border-0 w-100 rate-post-textarea"
               placeholder="أسم الماركة ...."
               onChange={(e) => changeNameBrand(e)}
               value={nameBrand}

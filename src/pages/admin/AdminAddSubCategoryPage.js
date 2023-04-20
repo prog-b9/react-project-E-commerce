@@ -1,6 +1,6 @@
 import React from "react";
 import { AdminSideBar } from "../../components/admin/AdminSideBar";
-import { AdminAddSubCategory } from "../../components/admin/adminContent/category/AdminAddSubCategory";
+import { AdminAddSubCategory } from "../../components/admin/adminContent/subCategory/AdminAddSubCategory";
 
 export const AdminAddSubCategoryPage = () => {
   return (

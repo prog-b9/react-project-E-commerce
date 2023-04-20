@@ -20,6 +20,7 @@ export const colorBackgroundCategory = [
 
 ////////////// Start SubCategory /////////////////
 export const CREATE_SUB_CATEGORY = "CREATE_SUB_CATEGORY";
+export const GET_ALL_SUB_CATEGORY = "GET_ALL_SUB_CATEGORY";
 ////////////// End SubCategory /////////////////
 
 
